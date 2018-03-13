@@ -45,6 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           children: <Widget>[
             new DrawerHeader(
+              decoration:
+                  new BoxDecoration(color: Theme.of(context).primaryColor),
               child: new Stack(
                 fit: StackFit.expand,
                 children: <Widget>[
@@ -54,19 +56,19 @@ class _MyHomePageState extends State<MyHomePage> {
                     filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
                     child: new Container(
                       color: Colors.black.withOpacity(0.5),
-                      child: new Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          const Padding(
-                              padding: const EdgeInsets.only(top: 20.0)),
-                          const CircleAvatar(
-                            backgroundImage: const NetworkImage(
-                                'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1125401688,1369076827&fm=27&gp=0.jpg'),
-                            radius: 32.0,
-                          )
-                        ],
-                      ),
+                      //child:
                     ),
+                  ),
+                  new Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      const Padding(padding: const EdgeInsets.only(top: 20.0)),
+                      const CircleAvatar(
+                        backgroundImage: const NetworkImage(
+                            'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1125401688,1369076827&fm=27&gp=0.jpg'),
+                        radius: 32.0,
+                      )
+                    ],
                   ),
                 ],
               ),
