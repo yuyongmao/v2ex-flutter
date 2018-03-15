@@ -1,54 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:v2ex/models/tab_data.dart';
 import 'package:v2ex/components/drawer_meun.dart';
-import 'package:v2ex/util/api.dart';
+
+import 'package:v2ex/components/refresh_list_view.dart';
+
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<TabData> tabs = <TabData>[
       new TabData(
         tabName: '技术',
-        subWidget: _buildList('tech')
+        subWidget:new RefreshListView('tech')
       ),
       new TabData(
         tabName: '创意',
-        subWidget: _buildList('creative'),
+        subWidget: new RefreshListView('creative')
       ),
       new TabData(
         tabName: '好玩',
-        subWidget: _buildList('play'),
-      ),
+        subWidget:new RefreshListView('play')
+        ),
       new TabData(
         tabName: 'Apple',
-        subWidget: _buildList('apple'),
+        subWidget: new RefreshListView('apple')
       ),
       new TabData(
         tabName: '酷工作',
-        subWidget: _buildList('jobs'),
+        subWidget:new RefreshListView('jobs')
       ),
       new TabData(
         tabName: '交易',
-        subWidget: _buildList('deals'),
+        subWidget: new RefreshListView('deals')
       ),
       new TabData(
         tabName: '城市',
-        subWidget: _buildList('city'),
+        subWidget: new RefreshListView('city')
       ),
       new TabData(
         tabName: '问与答',
-        subWidget: _buildList('qna'),
+        subWidget: new RefreshListView('qna')
       ),
       new TabData(
         tabName: '最热',
-        subWidget: _buildList('hot'),
+        subWidget:new RefreshListView('hot')
       ),
       new TabData(
         tabName: '全部',
-        subWidget: _buildList('all'),
+        subWidget: new RefreshListView('all')
       ),
       new TabData(
         tabName: 'R2',
-        subWidget: _buildList('r2'),
+        subWidget: new RefreshListView('r2')
       ),
     ];
 
@@ -78,13 +80,6 @@ class MainPage extends StatelessWidget {
   }
 
   Widget _buildList(String name) {
-    return new ListView(
-      children: <Widget>[
-        new ListTile(
-          title: new Text(name),
-          onTap: ()=>new V2exApi().test2(),
-        )
-      ],
-    );
+    return new RefreshListView(name);
   }
 }
