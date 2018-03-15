@@ -1,54 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:v2ex/models/tab_data.dart';
 import 'package:v2ex/components/drawer_meun.dart';
-
+import 'package:v2ex/util/api.dart';
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<TabData> tabs = <TabData>[
       new TabData(
         tabName: '技术',
-        subWidget: _buildList('技术')
+        subWidget: _buildList('tech')
       ),
       new TabData(
         tabName: '创意',
-        subWidget: _buildList('创意'),
+        subWidget: _buildList('creative'),
       ),
       new TabData(
         tabName: '好玩',
-        subWidget: _buildList('好玩'),
+        subWidget: _buildList('play'),
       ),
       new TabData(
         tabName: 'Apple',
-        subWidget: _buildList('Apple'),
+        subWidget: _buildList('apple'),
       ),
       new TabData(
         tabName: '酷工作',
-        subWidget: _buildList('酷工作'),
+        subWidget: _buildList('jobs'),
       ),
       new TabData(
         tabName: '交易',
-        subWidget: _buildList('交易'),
+        subWidget: _buildList('deals'),
       ),
       new TabData(
         tabName: '城市',
-        subWidget: _buildList('城市'),
+        subWidget: _buildList('city'),
       ),
       new TabData(
         tabName: '问与答',
-        subWidget: _buildList('问与答'),
+        subWidget: _buildList('qna'),
       ),
       new TabData(
         tabName: '最热',
-        subWidget: _buildList('最热'),
+        subWidget: _buildList('hot'),
       ),
       new TabData(
         tabName: '全部',
-        subWidget: _buildList('全部'),
+        subWidget: _buildList('all'),
       ),
       new TabData(
         tabName: 'R2',
-        subWidget: _buildList('R2'),
+        subWidget: _buildList('r2'),
       ),
     ];
 
@@ -82,6 +82,7 @@ class MainPage extends StatelessWidget {
       children: <Widget>[
         new ListTile(
           title: new Text(name),
+          onTap: ()=>new V2exApi().test2(),
         )
       ],
     );
